@@ -74,7 +74,7 @@
         <section>
           <div class="flex column">
             <div class="flex">
-              <img src="./src/css-flexbox.png" alt="table html element">
+              <img src="./src/css-flexbox.png" alt="table html element" style="max-height: 15vh;">
               <div class="flex" style="align-items: center; margin-left: 20px;">
                 display: flex;
               </div>
@@ -113,7 +113,7 @@
               </div>
             </div>
             <div class="flex fragment" data-fragment-index="3" style="align-items: center;">
-              <img src="./src/css-grid.png" alt="table html element">
+              <img src="./src/css-grid.png" alt="table html element" style="max-height: 15vh;">
               <div class="flex" style="align-items: center; margin-left: 20px;"></div>
               display: grid;
             </div>
@@ -140,15 +140,79 @@
         <section>
           <div class="flex" style="flex-direction: column-reverse;">
             <div class="flex jc-center">
-              <img class="fragment" data-fragment-index="1" src="./src/grid.png" alt="" style="width: 500px;">
+              <img class="fragment" data-fragment-index="1" src="./src/grid.png" alt="" style="max-height: 40vh;">
             </div>
             <pre><code data-trim data-noescape>
               display: grid;
             </code></pre>
           </div>
           <div class="link">
-            <a class="fragment" data-fragment-index="2"
-              href="https://labs.jensimmons.com/">https://labs.jensimmons.com/</a>
+            <a class="fragment" data-fragment-index="2" href="https://labs.jensimmons.com/">
+              https://labs.jensimmons.com/</a>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          CSS Grid Features
+        </section>
+        <section>
+          <div>
+            Grid Container
+          </div>
+          <div class="fragment margin-30">
+            Create a grid container by setting the display property with a value of grid or inline-grid.
+            All direct children of grid containers become grid items.
+          </div>
+          <div class="grid-container">
+            <div class="fragment">
+              <pre><code data-trim data-noescape>
+              display: grid;
+            </code></pre>
+              <img src="./src/display-grid.png" alt="display: grid">
+            </div>
+            <div class="fragment">
+              <pre><code data-trim data-noescape>
+              display: inline-grid;
+            </code></pre>
+              <img src="./src/display-inline-grid.png" alt="display: inline-grid">
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="fragment">
+            Explicit Grid
+          </div>
+          <div class="fragment margin-30">
+            Explicitly set a grid by creating columns and rows with the grid-template-columns and grid-template-rows
+            properties.
+          </div>
+          <div class="fragment">
+            <pre><code data-trim data-noescape>
+              display: grid;
+              grid-template-rows: 50px 100px;
+            </code></pre>
+            <img src="./src/explicit.png" alt="explicit grid">
+          </div>
+        </section>
+        <section>
+          <div>
+            You can use all non-negative length value for track size values: px, rem, em, %, fr, etc.
+          </div>
+          <pre class="fragment"><code data-trim data-noescape>
+            .grid-container {
+              display: grid;
+              grid-template-columns: 3rem 25% 1fr 2fr;
+            }
+          </code></pre>
+          <img class="fragment" src="./src/css-grid-values.png" alt="css-grid-values">
+          <div class="fragment">
+            <span class="fragment highlight-blue">"fr"</span> is a special css grid fractional unit which helps create
+            flexible
+            grid
+            tracks. It represents a fraction
+            of the available space in the grid container.
           </div>
         </section>
       </section>
@@ -165,6 +229,7 @@
     // - https://revealjs.com/config/
     Reveal.initialize({
       hash: true,
+      disableLayout: false,
 
       // Learn about plugins: https://revealjs.com/plugins/
       plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
