@@ -1,0 +1,41 @@
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.margin-5 {
+  margin: 5px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.center {
+  align-items: center;
+}
+
+.text-align {
+  text-align: justify;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-end {
+  justify-content: end;
+}
+
+.ff {
+  font-family: 'Nunito', sans-serif;
+}

@@ -1,40 +1,175 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+  <title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&family=Nunito:wght@200&display=swap"
+    rel="stylesheet">
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>CSS Grid Layout</h1>
+      </section>
+      <section>
+        <section>
+          CSS Grid - what is it?
+        </section>
+        <section>
+          Historically, there have been different methods for controlling web page layout.
+        </section>
+        <section>
+          <div class="grid-container">
+            <div class="flex column">
+              Tables
+              <img src="https://vertex-academy.com/tutorials/wp-content/uploads/2016/08/table.png"
+                alt="table html element"
+                style="width: 300px; height: 180px; margin: 0 auto 4rem auto; background: transparent;">
+            </div>
+            <div class="flex column fragment" data-fragment-index="1">
+              Floats
+              <img src="https://www.homepage-tukurikata.com/image/float-right.png" alt="table html element"
+                style="width: 300px; height: 180px; margin: 0 auto 4rem auto; background: transparent;">
+            </div>
+            <div class="flex column fragment" data-fragment-index="2">
+              Positioning
+              <img src="https://www.csssolid.com/images/csspositions/css-position-all.png" alt="table html element"
+                style="width: 300px; height: 180px; margin: 0 auto 4rem auto; background: transparent;">
+            </div>
+            <div class="flex column fragment" data-fragment-index="3">
+              Inline-block
+              <img
+                src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2011/09/inline-block.png?resize=526%2C207&ssl=1"
+                alt="table html element"
+                style="width: 400px; height: 180px; margin: 0 auto 4rem auto; background: transparent;">
+            </div>
+          </div>
+          <div class="fragment" data-fragment-index="4">
+            But all of these methods were essentially hacks and left out a lot of important functionality.
+          </div>
+        </section>
+        <section>
+          How to solve a problem of vertical centering of elements?
+        </section>
+        <section>
+          CSS Grid Layout is a two-dimensional layout system for the web.
+          It lets you lay content out in rows and columns and build complex layouts straightforward.
+        </section>
+        <section>
+          Flexbox is also a very great layout tool. But it's about one-dimensional positioning.
+        </section>
+        <section>
+          <div class="flex column">
+            <div class="flex">
+              <img src="./src/css-flexbox.png" alt="table html element">
+              <div class="flex" style="align-items: center; margin-left: 20px;">
+                display: flex;
+              </div>
+            </div>
+            <div class="fragment fade-in-then-out" data-fragment-index="2">
+              <div class="no-wrap-example flex jc-end ff">
+                <div class="flex" style="width: 200px; border: solid 1px white; margin: 20px;">
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: red;"></div>
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: yellow;"></div>
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: blue;"></div>
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: green;"></div>
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: white;"></div>
+                </div>
+                <div class="flex center fs-20 text-align">
+                  <pre><code style="width: 100px;" data-trim data-noescape>
+                  display: flex; <br>
+                  width: 200px;
+                </code></pre>
+                </div>
+              </div>
+              <div class="wrap-example flex jc-end ff">
+                <div class="flex" style="flex-wrap: wrap; width: 150px; border: solid 1px white; margin: 20px;">
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: red;"></div>
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: yellow;"></div>
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: blue;"></div>
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: green;"></div>
+                  <div class="margin-5" style="width: 30px; height: 30px; background-color: white;"></div>
+                </div>
+                <div class="flex center fs-20 text-align">
+                  <pre><code style="width: 100px;" data-trim data-noescape>
+                display: flex; <br>
+                width: 150px; <br>
+                flex-wrap: wrap;
+              </code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="flex fragment" data-fragment-index="3" style="align-items: center;">
+              <img src="./src/css-grid.png" alt="table html element">
+              <div class="flex" style="align-items: center; margin-left: 20px;"></div>
+              display: grid;
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="flex" style="flex-direction: column-reverse;">
+            <img class="fragment" data-fragment-index="2" src="./src/flex.png" alt="">
+            <pre><code class="fragment" data-fragment-index="1"  data-trim data-noescape>
+              display: flex;
+            </code></pre>
+          </div>
+          <div class="flex" style="flex-direction: column-reverse;">
+            <div class="flex jc-center">
+              <img class="fragment" data-fragment-index="4" src="./src/wrap.png" alt=""
+                style="width: 500px; height: 400px;">
+            </div>
+            <pre><code class="fragment" data-fragment-index="3" data-trim data-noescape>
+              display: flex;
+              flex-wrap: wrap;
+            </code></pre>
+          </div>
+        </section>
+        <section>
+          <div class="flex" style="flex-direction: column-reverse;">
+            <div class="flex jc-center">
+              <img class="fragment" data-fragment-index="1" src="./src/grid.png" alt="" style="width: 500px;">
+            </div>
+            <pre><code data-trim data-noescape>
+              display: grid;
+            </code></pre>
+          </div>
+          <div class="link">
+            <a class="fragment" data-fragment-index="2"
+              href="https://labs.jensimmons.com/">https://labs.jensimmons.com/</a>
+          </div>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
 </html>
