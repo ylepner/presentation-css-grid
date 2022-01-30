@@ -62,7 +62,12 @@
           </div>
         </section>
         <section>
-          How to solve a problem of vertical centering of elements?
+          <div>
+            How to solve a problem of vertical centering of elements?
+          </div>
+          <div class="fragment r-fit-text">
+            CSS GRID
+          </div>
         </section>
         <section>
           CSS Grid Layout is a two-dimensional layout system for the web.
@@ -152,10 +157,9 @@
           </div>
         </section>
       </section>
-
       <section>
         <section>
-          CSS Grid Basic Features
+          CSS Grid: Basic Features
         </section>
         <section>
           <div>
@@ -193,7 +197,12 @@
               display: grid;
               grid-template-rows: 50px 100px;
             </code></pre>
-            <img src="./src/explicit.png" alt="explicit grid">
+            <div>
+              <img class="fragment" src="./src/explicit.png" alt="explicit grid">
+              <div class="fragment flex fs-20 center" style="margin: 0 100px;">
+                Because only 2 row tracks were defined, heights of items 3 and 4 are defined by the contents of each.
+              </div>
+            </div>
           </div>
         </section>
         <section>
@@ -201,19 +210,108 @@
             You can use all non-negative length value for track size values: px, rem, em, %, fr, etc.
           </div>
           <pre class="fragment"><code data-trim data-noescape>
-            .grid-container {
               display: grid;
               grid-template-columns: 3rem 25% 1fr 2fr;
-            }
           </code></pre>
           <img class="fragment" src="./src/css-grid-values.png" alt="css-grid-values">
           <div class="fragment">
             <span class="fragment highlight-blue">"fr"</span> is a special css grid fractional unit which helps create
-            flexible
-            grid
-            tracks. It represents a fraction
-            of the available space in the grid container.
+            flexible grid tracks. It represents a fraction of the available space in the grid container.
           </div>
+        </section>
+      </section>
+      <section>
+        <section>
+          CSS Grid: Useful Hints
+        </section>
+        <section>
+          <div class="fragment">
+            Minimum and Maximum Grid Track Sizes
+          </div>
+          <pre class="fragment"><code data-trim data-noescape>
+            grid-template-rows: minmax(100px, auto);
+            grid-template-columns: minmax(auto, 50%) 1fr 3em;</code>
+          </pre>
+          <img class="fragment" src="./src/minmax.png" alt="Minimum and Maximum Grid Track Sizes"
+            style="max-height: 20vh;">
+          <div class="fragment fs-20">
+            The minmax() function accepts 2 arguments: the first is the minimum size of the track and the second the
+            maximum size.
+            Alongside length values, the values can also be auto, which allows the track to grow/stretch based on the
+            size of the
+            content.
+          </div>
+        </section>
+        <section>
+          <div class="fragment">
+            Repeating Grid Tracks
+          </div>
+          <pre class="fragment"><code data-trim data-noescape>
+            grid-template-rows: repeat(4, 100px);
+            grid-template-columns: repeat(3, 1fr);</code>
+          </pre>
+          <img class="fragment" src="./src/repeat.png" alt="Repeating Grid Tracks" style="max-height: 20vh;">
+          <div class="fragment fs-20">
+            The repeat() notation accepts 2 arguments: the first represents the number of times the defined tracks
+            should repeat, and the second is the track definition.
+          </div>
+        </section>
+        <section>
+          <div class="fragment">
+            Positioning Items by Grid Line Numbers
+          </div>
+          <pre class="fragment"><code data-trim data-noescape>
+            grid-row-start:    2;
+            grid-row-end:      3;
+            grid-column-start: 2;
+            grid-column-end:   3;</code>
+          </pre>
+          <div class="flex">
+            <img class="fragment" src="./src/line-numbers.png" alt="Grid Line Numbers">
+            <div class="flex column" style="gap: 100px;">
+              <pre class="fragment"><code data-trim data-noescape style="width: 120%;">
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;</code>
+          </pre>
+              <pre class="fragment"><code data-trim data-noescape style="width: 120%;">
+            grid-area: 2 / 3 / 2 / 3 </code>
+          </pre>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="fragment">
+            Implicitly Named Grid Lines
+          </div>
+          <div class="flex margin-30" style="gap: 50px;">
+            <pre class="fragment"><code data-trim data-noescape class="fs-20">
+            grid-template-areas:   "header header"
+                                   "content sidebar"
+                                   "footer footer";
+            grid-template-rows:    80px 1fr 40px;
+            grid-template-columns: 1fr 200px;</code>
+          </pre>
+            <pre class="fragment" style="margin: 0;"><code data-trim data-noescape style="line-height: 25px; height: 100px;" class="fs-20">
+            header {
+              grid-area: header;
+            }
+
+            .main-block {
+              grid-area: content;
+            }
+
+            .sidebar {
+              grid-area: sidebar;
+            }
+
+            footer {
+              grid-area: footer;
+            }
+          </code>
+          </pre>
+          </div>
+          <img class="fragment" src="./src/named-grid-lines.png" alt="Implicitly Named Grid Lines"
+            style="max-height: 20vh;">
         </section>
       </section>
     </div>
