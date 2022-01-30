@@ -312,7 +312,132 @@
           </div>
           <img class="fragment" src="./src/named-grid-lines.png" alt="Implicitly Named Grid Lines"
             style="max-height: 20vh;">
+          <div class="fragment" style="line-height: 30px;">
+            <span class="fs-20">More information</span> <br>
+            <a href="https://learncssgrid.com/">
+              https://learncssgrid.com/
+            </a>
+          </div>
         </section>
+      </section>
+      <section>
+        <section>
+          CSS Grid Auto Flow
+        </section>
+        <section>
+          <div>
+            CSS Grid of 24 box elements
+          </div>
+          <div class="flex-inline jc-center margin-30" style="gap: 50px;">
+            <div class="grid">
+              <div class="box">BOX 1</div>
+              <div class="box">BOX 2</div>
+              <div class="box">BOX 3</div>
+              <div class="box">BOX 4</div>
+              <div class="box">BOX 5</div>
+              <div class="box">BOX 6</div>
+              <div class="box">BOX 7</div>
+              <div class="box">BOX 8</div>
+              <div class="box">BOX 9</div>
+              <div class="box">BOX 10</div>
+              <div class="box">BOX 11</div>
+              <div class="box">BOX 12</div>
+              <div class="box">BOX 13</div>
+              <div class="box">BOX 14</div>
+              <div class="box">BOX 15</div>
+              <div class="box">BOX 16</div>
+              <div class="box">BOX 17</div>
+              <div class="box">BOX 18</div>
+              <div class="box">BOX 19</div>
+              <div class="box">BOX 20</div>
+              <div class="box">BOX 21</div>
+              <div class="box">BOX 22</div>
+              <div class="box">BOX 23</div>
+              <div class="box">BOX 24</div>
+            </div>
+            <pre><code data-trim data-noescape class="fs-20">
+            .box {
+              border: 1px solid white;
+              background-color:crimson;
+              align-items: center;
+              display: flex;
+              justify-content: center;
+              font-size: 20px;
+              padding: 5px;
+            }
+
+            .grid {
+              display: grid;
+              grid-template-rows: repeat(4, 1fr);
+              grid-template-columns: repeat(6, 1fr);
+              grid-gap: 5px;
+            }
+          </code></pre>
+          </div>
+        </section>
+        <section>
+          <div>
+            Higlith some blocks
+          </div>
+          <div class="flex-inline jc-center margin-30" style="gap: 50px;">
+            <img src="./src/child.png" alt="box: nth-child(5n)">
+            <pre><code data-trim data-noescape class="fs-20">
+              .box:nth-child(6n) {
+                background-color: #009688;
+              }
+            </code></pre>
+          </div>
+        </section>
+        <section>
+          <div>
+            Set "span" property
+          </div>
+          <div class="flex-inline jc-center margin-30" style="gap: 50px;">
+            <img src="./src/span.png" alt="box: span">
+            <pre><code data-trim data-noescape class="fs-20">
+              .box:nth-child(6n) {
+                background-color: #009688;
+                grid-column: span 2;
+                grid-row: span 2;
+              }
+            </code></pre>
+          </div>
+        </section>
+        <section>
+          <div>
+            Set grid-auto-flow: column
+          </div>
+          <div class="flex-inline jc-center margin-30" style="gap: 50px;">
+            <img src="./src/column.png" alt="grid-auto-flow: column">
+            <pre><code data-trim data-noescape class="fs-20">
+              .box:nth-child(6n) {
+                background-color: #009688;
+                grid-column: span 2;
+                grid-row: span 2;
+                grid-auto-flow: column;
+              }
+            </code></pre>
+          </div>
+        </section>
+        <section>
+          <div>
+            Set grid-auto-flow: dense
+          </div>
+          <div class="flex-inline jc-center margin-30" style="gap: 50px;">
+            <img src="./src/dense.png" alt="grid-auto-flow: dence">
+            <pre><code data-trim data-noescape class="fs-20">
+            .box:nth-child(6n) {
+              background-color: #009688;
+              grid-column: span 2;
+              grid-row: span 2;
+              grid-auto-flow: dense;
+            }
+          </code></pre>
+          </div>
+        </section>
+      </section>
+      <section>
+
       </section>
     </div>
   </div>
