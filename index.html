@@ -26,7 +26,7 @@
       </section>
       <section>
         <section>
-          CSS Grid - what is it?
+          Why CSS Grid?
         </section>
         <section>
           Historically, there have been different methods for controlling web page layout.
@@ -65,7 +65,7 @@
           Flexbox is a very great layout tool. But it doesn't solve all the problems.
         </section>
         <section>
-          The uniqueness of CSS Grid Layout is that is a two-dimensional layout system for the web.
+          CSS Grid Layout is a two-dimensional layout system for the web.
           It lets you lay content out in rows and columns and build complex layouts straightforward.
         </section>
         <section>
@@ -217,16 +217,15 @@
           CSS Grid: Useful Hints
         </section>
         <section>
-          <div class="fragment">
+          <div>
             Minimum and Maximum Grid Track Sizes
           </div>
-          <pre class="fragment"><code data-trim data-noescape>
+          <pre><code data-trim data-noescape>
             grid-template-rows: minmax(100px, auto);
             grid-template-columns: minmax(auto, 50%) 1fr 3em;</code>
           </pre>
-          <img class="fragment" src="./src/minmax.png" alt="Minimum and Maximum Grid Track Sizes"
-            style="max-height: 20vh;">
-          <div class="fragment fs-20">
+          <img src="./src/minmax.png" alt="Minimum and Maximum Grid Track Sizes" style="max-width: 44vh;">
+          <div class="fs-20">
             The minmax() function accepts 2 arguments: the first is the minimum size of the track and the second the
             maximum size.
             Alongside length values, the values can also be auto, which allows the track to grow/stretch based on the
@@ -235,55 +234,55 @@
           </div>
         </section>
         <section>
-          <div class="fragment">
+          <div>
             Repeating Grid Tracks
           </div>
-          <pre class="fragment"><code data-trim data-noescape>
+          <pre><code data-trim data-noescape>
             grid-template-rows: repeat(4, 100px);
             grid-template-columns: repeat(3, 1fr);</code>
           </pre>
-          <img class="fragment" src="./src/repeat.png" alt="Repeating Grid Tracks" style="max-height: 20vh;">
-          <div class="fragment fs-20">
+          <img src="./src/repeat.png" alt="Repeating Grid Tracks" style="max-width: 44vh;">
+          <div class="fs-20">
             The repeat() notation accepts 2 arguments: the first represents the number of times the defined tracks
             should repeat, and the second is the track definition.
           </div>
         </section>
         <section>
-          <div class="fragment">
+          <div>
             Positioning Items by Grid Line Numbers
           </div>
-          <pre class="fragment"><code data-trim data-noescape>
+          <pre><code data-trim data-noescape>
             grid-row-start:    2;
             grid-row-end:      3;
             grid-column-start: 2;
             grid-column-end:   3;</code>
           </pre>
           <div class="flex">
-            <img class="fragment" src="./src/line-numbers.png" alt="Grid Line Numbers">
+            <img src="./src/line-numbers.png" alt="Grid Line Numbers">
             <div class="flex column" style="gap: 100px;">
-              <pre class="fragment"><code data-trim data-noescape style="width: 120%;">
+              <pre><code data-trim data-noescape style="width: 120%;">
             grid-row: 2 / 3;
             grid-column: 2 / 3;</code>
           </pre>
-              <pre class="fragment"><code data-trim data-noescape style="width: 120%;">
+              <pre><code data-trim data-noescape style="width: 120%;">
             grid-area: 2 / 3 / 2 / 3 </code>
           </pre>
             </div>
           </div>
         </section>
         <section>
-          <div class="fragment">
+          <div>
             Implicitly Named Grid Lines
           </div>
           <div class="flex margin-30" style="gap: 50px;">
-            <pre class="fragment"><code data-trim data-noescape class="fs-20">
+            <pre><code data-trim data-noescape class="fs-20">
             grid-template-areas:   "header header"
                                    "content sidebar"
                                    "footer footer";
             grid-template-rows:    80px 1fr 40px;
             grid-template-columns: 1fr 200px;</code>
           </pre>
-            <pre class="fragment" style="margin: 0;"><code data-trim data-noescape style="line-height: 25px; height: 100px;" class="fs-20">
+            <pre style="margin: 0;"><code data-trim data-noescape style="line-height: 25px; height: 100px;" class="fs-20">
             header {
               grid-area: header;
             }
@@ -302,8 +301,7 @@
           </code>
           </pre>
           </div>
-          <img class="fragment" src="./src/named-grid-lines.png" alt="Implicitly Named Grid Lines"
-            style="max-height: 20vh;">
+          <img src="./src/named-grid-lines.png" alt="Implicitly Named Grid Lines" style="max-width: 44vh;">
           <div class="fragment" style="line-height: 30px;">
             <span class="fs-20">More information</span> <br>
             <a href="https://learncssgrid.com/">
@@ -326,7 +324,7 @@
           <div>
             CSS Grid of 24 box elements
           </div>
-          <div class="flex-inline jc-center margin-30" style="gap: 50px;">
+          <div class="flex-inline jc-center margin-30" style="gap: 50px; height: 500px;">
             <div class="grid">
               <div class="box">BOX 1</div>
               <div class="box">BOX 2</div>
@@ -438,7 +436,7 @@
             With "grid-auto-flow: dense" you can create with one line of code reach effects for photo gallery or market
             places web layout in responsive design.
           </div>
-          <video style="max-height: 27vh;"
+          <video style="max-width: 70vh;"
             src="./src/Image Gallery Options _ Jen Simmons - Google Chrome 2022-01-30 19-37-24.mp4" controls></video>
           <div class="fs-20">Video from:
             <a href="https://labs.jensimmons.com/">https://labs.jensimmons.com/</a>
@@ -456,9 +454,8 @@
           <li class="fragment">You can control rows and colomns and have access to any grid cell.</li>
           <li class="fragment">CSS Grid has many features that make building complex layouts simpler. You can use
             different grid track
-            sizes, special css grid functions such as minmax(), repeat(), also is possible define grid lines by numbers,
-            names,
-            etc.</li>
+            sizes, special css grid functions such as minmax(), repeat(), also is possible define grid lines by numbers
+            or names.</li>
           <li class="fragment">"Grid-auto-flow" property controls how auto-placed items get inserted in the grid.</li>
           <li class="fragment">You can always combine different web page layout methods. For example, CSS Grid and
             Flexbox models work together quite well.</li>
