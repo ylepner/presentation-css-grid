@@ -79,3 +79,9 @@ a {
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 5px;
 }
+
+.flex-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
